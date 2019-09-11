@@ -60,7 +60,7 @@ void Tester::testList(Collection collection) {
     list->pop_back();
     ASSERT(list->size() == 4, "The " + list->name() + " pop_back is not working");
     ASSERT(list->back() == elements[4], "The " + list->name() + " back is not working");
-    
+
     list->reverse();
 
     ASSERT(list->back() == elements[1], "The " + list->name() + " reverse is not working");

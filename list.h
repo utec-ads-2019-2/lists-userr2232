@@ -27,9 +27,7 @@ class List {
         virtual void reverse() = 0;
         virtual string name() = 0;
 
-        ~List() {
-            // TODO
-        }
+        ~List() {}
 };
 
 #endif

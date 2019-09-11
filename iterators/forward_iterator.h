@@ -2,6 +2,7 @@
 #define FORWARD_ITERATOR_H
 
 #include "../iterator.h"
+#include <stdexcept>
 
 template <typename T> 
 class ForwardIterator : public Iterator<T> {
@@ -10,19 +11,29 @@ class ForwardIterator : public Iterator<T> {
         ForwardIterator(Node<T> *node) : Iterator<T>(node) {};
 
         ForwardIterator<T> operator=(ForwardIterator<T> other) {
-            // TODO
+            this->current = other.current;
+            return *this;
         }
 
         bool operator!=(ForwardIterator<T> other) {
-            // TODO
+            return this->current != other.current;
         }
 
         ForwardIterator<T> operator++() {
-            // TODO
+            if(!this->current) {
+                throw runtime_error(string("nullptr does not have next element."));
+            } else {
+                this->current = this->current->next;
+                return *this;
+            }
         }
 
         T operator*() {
-            // TODO
+            if(!this->current) {
+                throw runtime_error(string("Trying to access an invalid address"));
+            } else {
+                return this->current->data;
+            }
         }
 };
 
