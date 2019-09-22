@@ -8,6 +8,7 @@
             "type": "shell",
             "command": "g++",
             "args": [
+                "-std=c++14",
                 "-g", "main.cpp", "mock/mocker.cpp", "test/tester.cpp",
                 "-o", "lists.out"
             ],

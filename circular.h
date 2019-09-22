@@ -7,6 +7,7 @@ template <typename T>
 class CircularLinkedList : public List<T> {
     public:
         CircularLinkedList() : List<T>() {}
+        // Destructor?
         ~CircularLinkedList() {}
         T front() {
             if(!this->head) {

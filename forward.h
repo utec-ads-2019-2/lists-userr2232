@@ -72,6 +72,7 @@ class ForwardList : public List<T> {
         }
 
         T operator[](int index) {
+            // Caso negativo?
             if(index>=this->nodes) {
                 throw runtime_error(string("Index out of bounds."));
             }
